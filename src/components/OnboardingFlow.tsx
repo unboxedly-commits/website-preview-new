@@ -421,70 +421,76 @@ export default function OnboardingFlow() {
 
                     {/* Website Snippet Content */}
                     <div className="flex-1 relative overflow-hidden flex flex-col bg-[#0a0a0a]">
-                      {businessInfo.reference && (/\.[a-z]{2,}/i.test(businessInfo.reference) || businessInfo.reference.startsWith('http')) ? (
-                        <iframe 
-                          src={businessInfo.reference.startsWith('http') ? businessInfo.reference : `https://${businessInfo.reference}`}
-                          className="w-full h-full border-0 pointer-events-none bg-white"
-                          sandbox="allow-scripts allow-same-origin"
-                          title="Reference Website"
-                        />
-                      ) : (
-                        <>
-                          {/* Dynamic Background based on vibe */}
-                          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.15)_0%,transparent_60%)] pointer-events-none" />
-                          
-                          {/* Navbar */}
-                          <div className="px-8 py-6 flex justify-between items-center relative z-10">
-                            <div className="font-black text-xl tracking-tighter text-white">
-                              {businessInfo.name.toUpperCase() || "BRAND"}
-                            </div>
-                            <div className="flex gap-6 text-xs font-bold text-white/60 uppercase tracking-wider">
-                              <span>Services</span>
-                              <span>About</span>
-                              <span>Contact</span>
-                            </div>
-                          </div>
-
-                          {/* Hero Section (Dynamically Injected) */}
-                          <div className="flex-1 flex flex-col justify-center px-12 relative z-10 text-left max-w-2xl">
+                      {(() => {
+                        const urlStr = [businessInfo.reference, businessInfo.industry, businessInfo.name].find(s => /\.[a-z]{2,}/i.test(s) || s.startsWith('http'));
+                        if (urlStr) {
+                          return (
+                            <iframe 
+                              src={urlStr.startsWith('http') ? urlStr : `https://${urlStr}`}
+                              className="w-full h-full border-0 pointer-events-none bg-white"
+                              sandbox="allow-scripts allow-same-origin"
+                              title="Reference Website"
+                            />
+                          );
+                        }
+                        return (
+                          <>
+                            {/* Dynamic Background based on vibe */}
+                            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.15)_0%,transparent_60%)] pointer-events-none" />
                             
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] uppercase tracking-widest font-bold mb-6 w-fit">
-                              {businessInfo.industry || 'Industry'} Leader
-                            </div>
-
-                            {businessInfo.reference ? (
-                              // Keyword/Vibe Reference Logic
-                              <>
-                                <h1 className="text-4xl md:text-5xl font-black text-white leading-[1.1] mb-6 tracking-tight capitalize">
-                                  The Ultimate <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">{businessInfo.reference}</span> Experience.
-                                </h1>
-                                <p className="text-white/60 text-sm leading-relaxed max-w-md mb-8">
-                                  A highly-optimized digital storefront designed around your exact aesthetic vision, engineered to dominate the {businessInfo.industry} market.
-                                </p>
-                              </>
-                            ) : (
-                              // No Reference
-                              <>
-                                <h1 className="text-4xl md:text-5xl font-black text-white leading-[1.1] mb-6 tracking-tight">
-                                  Next-Generation <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Automation</span>.
-                                </h1>
-                                <p className="text-white/60 text-sm leading-relaxed max-w-md mb-8">
-                                  Deployed with ZevenBots standard high-conversion architecture for maximum lead generation.
-                                </p>
-                              </>
-                            )}
-
-                            <div className="flex gap-4">
-                              <div className="px-6 py-3 bg-white text-black font-bold text-sm rounded flex items-center gap-2">
-                                Get Started
+                            {/* Navbar */}
+                            <div className="px-8 py-6 flex justify-between items-center relative z-10">
+                              <div className="font-black text-xl tracking-tighter text-white">
+                                {businessInfo.name.toUpperCase() || "BRAND"}
                               </div>
-                              <div className="px-6 py-3 border border-white/20 text-white font-bold text-sm rounded">
-                                Learn More
+                              <div className="flex gap-6 text-xs font-bold text-white/60 uppercase tracking-wider">
+                                <span>Services</span>
+                                <span>About</span>
+                                <span>Contact</span>
                               </div>
                             </div>
-                          </div>
-                        </>
-                      )}
+
+                            {/* Hero Section (Dynamically Injected) */}
+                            <div className="flex-1 flex flex-col justify-center px-12 relative z-10 text-left max-w-2xl">
+                              
+                              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] uppercase tracking-widest font-bold mb-6 w-fit">
+                                {businessInfo.industry || 'Industry'} Leader
+                              </div>
+
+                              {businessInfo.reference ? (
+                                // Keyword/Vibe Reference Logic
+                                <>
+                                  <h1 className="text-4xl md:text-5xl font-black text-white leading-[1.1] mb-6 tracking-tight capitalize">
+                                    The Ultimate <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">{businessInfo.reference}</span> Experience.
+                                  </h1>
+                                  <p className="text-white/60 text-sm leading-relaxed max-w-md mb-8">
+                                    A highly-optimized digital storefront designed around your exact aesthetic vision, engineered to dominate the {businessInfo.industry} market.
+                                  </p>
+                                </>
+                              ) : (
+                                // No Reference
+                                <>
+                                  <h1 className="text-4xl md:text-5xl font-black text-white leading-[1.1] mb-6 tracking-tight">
+                                    Next-Generation <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Automation</span>.
+                                  </h1>
+                                  <p className="text-white/60 text-sm leading-relaxed max-w-md mb-8">
+                                    Deployed with ZevenBots standard high-conversion architecture for maximum lead generation.
+                                  </p>
+                                </>
+                              )}
+
+                              <div className="flex gap-4">
+                                <div className="px-6 py-3 bg-white text-black font-bold text-sm rounded flex items-center gap-2">
+                                  Get Started
+                                </div>
+                                <div className="px-6 py-3 border border-white/20 text-white font-bold text-sm rounded">
+                                  Learn More
+                                </div>
+                              </div>
+                            </div>
+                          </>
+                        );
+                      })()}
                     </div>
                   </motion.div>
 
