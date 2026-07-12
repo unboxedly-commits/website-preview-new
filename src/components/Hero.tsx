@@ -10,15 +10,7 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#d97757]/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-[#6a9bcc]/10 rounded-full blur-[100px] pointer-events-none" />
       
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 border border-[#faf9f5]/10"
-      >
-        <Zap size={16} className="text-[#d97757]" />
-        <span className="text-xs font-mono text-[#faf9f5]/80 uppercase tracking-wider">High-Converting Websites for Local Businesses</span>
-      </motion.div>
+
 
       <motion.h1 
         initial={{ opacity: 0, y: 30 }}
