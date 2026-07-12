@@ -34,11 +34,11 @@ export default function ShowcaseGrid() {
   return (
     <section id="showcases" className="py-32 px-4 max-w-7xl mx-auto relative">
       <div className="mb-16 md:mb-24">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4" style={{ fontFamily: "Poppins, Arial, sans-serif" }}>
-          Proven <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d97757] to-[#6a9bcc]">Designs</span>
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          Industry-Specific <span className="text-gradient">Intelligence</span>
         </h2>
-        <p className="text-[#faf9f5]/70 text-lg max-w-2xl" style={{ fontFamily: "Lora, Georgia, serif" }}>
-          We design sites that turn local traffic into actual phone calls and booked appointments. See how it works in your industry.
+        <p className="text-white/60 text-lg max-w-2xl">
+          Our agents are pre-trained on the aesthetic and conversion models of 10 high-value industries. Explore the deployed showcases below.
         </p>
       </div>
 
@@ -79,7 +79,7 @@ export default function ShowcaseGrid() {
                     initial={{ rotate: 0 }}
                     whileHover={{ rotate: 90 }}
                     transition={{ duration: 0.3 }}
-                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center font-mono text-xs text-[#faf9f5]/70 group-hover:bg-[#faf9f5] group-hover:text-[#141413] transition-colors duration-500"
+                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center font-mono text-xs text-white/70 group-hover:bg-white group-hover:text-black transition-colors duration-500"
                   >
                     {showcase.id.substring(0, 2).toUpperCase()}
                   </motion.div>
@@ -87,15 +87,15 @@ export default function ShowcaseGrid() {
                     initial={{ x: -10, opacity: 0 }}
                     whileHover={{ x: 0, opacity: 1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="w-8 h-8 rounded-full bg-[#faf9f5] text-[#141413] flex items-center justify-center shadow-[0_0_20px_rgba(250,249,245,0.5)]"
+                    className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.5)]"
                   >
                     <ArrowUpRight size={16} />
                   </motion.div>
                 </div>
 
                 <div className="relative z-10 transform group-hover:translate-x-2 transition-transform duration-500">
-                  <h3 className="text-xl font-bold mb-1 text-[#faf9f5]" style={{ fontFamily: "Poppins, Arial, sans-serif" }}>{showcase.name}</h3>
-                  <p className="text-sm text-[#faf9f5]/50 group-hover:text-[#faf9f5]/80 transition-colors duration-500" style={{ fontFamily: "Lora, Georgia, serif" }}>{showcase.desc}</p>
+                  <h3 className="text-xl font-bold mb-1 text-white">{showcase.name}</h3>
+                  <p className="text-sm text-white/50 group-hover:text-white/80 transition-colors duration-500">{showcase.desc}</p>
                 </div>
               </div>
             </Link>

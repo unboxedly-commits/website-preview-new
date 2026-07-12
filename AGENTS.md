@@ -18,3 +18,7 @@ If no, create a "For tomorrows session.md" file, keep updating the same file eve
 
 # Role and Options Protocol
 - Assume the best role required for questions or ideas. When presenting questions or ideas, always provide 3 distinct options to choose from, and wait for the user to approve the one they see fit.
+
+# UI Design Rules
+- No visual mockups or wireframes for websites in the UI unless explicitly asked for it. Keep it simple and text-based where appropriate.
+- When building websites, visual first: do not ask questions textually or via UI prompts to make design choices; instead, build the options directly into the code so the user can see them live on their screen before choosing.

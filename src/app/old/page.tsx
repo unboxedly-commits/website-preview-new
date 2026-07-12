@@ -1,9 +1,9 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import ShowcaseGrid from "@/components/ShowcaseGrid";
-import HowItWorks from "@/components/HowItWorks";
-import Pricing from "@/components/Pricing";
-import ThreatMatrix from "@/components/ThreatMatrix";
+import Navbar from "@/components-old/Navbar";
+import Hero from "@/components-old/Hero";
+import ShowcaseGrid from "@/components-old/ShowcaseGrid";
+import HowItWorks from "@/components-old/HowItWorks";
+import Pricing from "@/components-old/Pricing";
+import ThreatMatrix from "@/components-old/ThreatMatrix";
 
 export default function Home() {
   return (

@@ -7,29 +7,29 @@ export default function HowItWorks() {
   const steps = [
     {
       icon: Search,
-      title: "We Study Your Customers",
-      desc: "We figure out exactly what your local customers are searching for and what makes them choose you."
+      title: "Discovery & Strategy",
+      desc: "We dive deep into your brand identity, target audience, and revenue goals to engineer a platform that converts."
     },
     {
       icon: PenTool,
-      title: "We Build The Funnel",
-      desc: "We design a high-converting site built strictly to capture traffic and schedule jobs on your calendar."
+      title: "Design & Architecture",
+      desc: "Our architects wireframe and design a bespoke digital experience tailored specifically to dominate your industry."
     },
     {
       icon: Rocket,
-      title: "You Do The Work",
-      desc: "The site goes live. When people look for your services, they find you and book. You focus on running the business."
+      title: "Deployment & Growth",
+      desc: "We launch your scalable, high-performance platform and hand over the keys to your new digital empire."
     }
   ];
 
   return (
     <section id="process" className="py-32 px-4 max-w-7xl mx-auto relative z-10">
       <div className="text-center mb-24">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4" style={{ fontFamily: "Poppins, Arial, sans-serif" }}>
-          How It <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d97757] to-[#6a9bcc]">Works</span>
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          The <span className="text-gradient">Process</span>
         </h2>
-        <p className="text-[#faf9f5]/70 text-lg max-w-2xl mx-auto font-light" style={{ fontFamily: "Lora, Georgia, serif" }}>
-          A straightforward process to get your new site live and pulling in traffic within a week.
+        <p className="text-white/60 text-lg max-w-2xl mx-auto font-light">
+          A seamless, transparent journey from initial concept to a high-converting digital product.
         </p>
       </div>
 

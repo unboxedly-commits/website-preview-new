@@ -10,7 +10,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Web Agency | Autonomous Rebranding",
+  title: "ZevenBots | Automated Lead Generation",
   description: "Next-generation website rebuilding and rebranding powered by autonomous AI agents.",
 };
 

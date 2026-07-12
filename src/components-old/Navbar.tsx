@@ -71,21 +71,21 @@ export default function Navbar() {
           className="flex items-center justify-between px-6 py-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.5)]"
         >
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-gradient-to-br from-[#faf9f5]/20 to-[#faf9f5]/5 rounded-full shadow-[0_0_10px_rgba(250,249,245,0.2)]">
-              <Hexagon size={18} className="text-[#faf9f5]" />
+            <div className="p-2 bg-gradient-to-br from-white/20 to-white/5 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+              <Hexagon size={18} className="text-white" />
             </div>
-            <span className="font-bold tracking-tight text-lg text-[#faf9f5]/90" style={{ fontFamily: "Poppins, Arial, sans-serif" }}>ZevenBots</span>
+            <span className="font-bold tracking-tight text-lg text-white/90">ZevenBots</span>
           </div>
           
-          <div className="hidden md:flex items-center gap-2 p-1.5 rounded-xl bg-[#faf9f5]/5 border border-[#faf9f5]/10 shadow-[inset_0_0_10px_rgba(250,249,245,0.02)]">
-            <button onClick={() => scrollTo('showcases')} className="px-4 py-2 rounded-lg text-[11px] uppercase tracking-widest font-mono text-[#faf9f5]/50 hover:text-[#d97757] border border-transparent hover:border-[#d97757]/50 hover:bg-[#d97757]/10 transition-all duration-300">Showcases</button>
-            <button onClick={() => scrollTo('process')} className="px-4 py-2 rounded-lg text-[11px] uppercase tracking-widest font-mono text-[#faf9f5]/50 hover:text-[#d97757] border border-transparent hover:border-[#d97757]/50 hover:bg-[#d97757]/10 transition-all duration-300">How it works</button>
-            <button onClick={() => scrollTo('pricing')} className="px-4 py-2 rounded-lg text-[11px] uppercase tracking-widest font-mono text-[#faf9f5]/50 hover:text-[#d97757] border border-transparent hover:border-[#d97757]/50 hover:bg-[#d97757]/10 transition-all duration-300">Pricing</button>
+          <div className="hidden md:flex items-center gap-2 p-1.5 rounded-xl bg-white/5 border border-white/10 shadow-[inset_0_0_10px_rgba(255,255,255,0.02)]">
+            <button onClick={() => scrollTo('showcases')} className="px-4 py-2 rounded-lg text-[11px] uppercase tracking-widest font-mono text-white/50 hover:text-blue-200 border border-transparent hover:border-blue-500/50 hover:bg-blue-500/10 hover:shadow-[inset_0_0_15px_rgba(59,130,246,0.2)] transition-all duration-300">Showcases</button>
+            <button onClick={() => scrollTo('process')} className="px-4 py-2 rounded-lg text-[11px] uppercase tracking-widest font-mono text-white/50 hover:text-blue-200 border border-transparent hover:border-blue-500/50 hover:bg-blue-500/10 hover:shadow-[inset_0_0_15px_rgba(59,130,246,0.2)] transition-all duration-300">How it works</button>
+            <button onClick={() => scrollTo('pricing')} className="px-4 py-2 rounded-lg text-[11px] uppercase tracking-widest font-mono text-white/50 hover:text-blue-200 border border-transparent hover:border-blue-500/50 hover:bg-blue-500/10 hover:shadow-[inset_0_0_15px_rgba(59,130,246,0.2)] transition-all duration-300">Pricing</button>
           </div>
 
           <button 
             onClick={() => window.location.href = '/audit'}
-            className="px-6 py-2.5 text-sm font-bold bg-[#d97757] text-[#141413] rounded-full hover:scale-105 transition-transform active:scale-95 shadow-[0_0_15px_rgba(217,119,87,0.3)]"
+            className="px-6 py-2.5 text-sm font-bold bg-white text-black rounded-full hover:scale-105 transition-transform active:scale-95 shadow-[0_0_15px_rgba(255,255,255,0.3)]"
           >
             Get Free Audit
           </button>

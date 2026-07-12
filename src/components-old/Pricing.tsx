@@ -6,54 +6,54 @@ import { Check, X } from "lucide-react";
 export default function Pricing() {
   const tiers = [
     {
-      name: "Website + SEO",
+      name: "Starter AI",
       price: "$250",
       period: "/ month",
-      desc: "For local businesses that need a fast site and consistent organic traffic.",
+      desc: "Perfect for local businesses wanting a modern website and basic AI lead capture.",
       features: [
-        "High-Converting Website",
+        "Premium Mobile-Optimized Website",
         "Website Hosting & Maintenance",
-        "Local SEO Optimization",
-        "Basic Lead Capture Form",
+        "Basic On-Page SEO",
+        "AI Chatbot for Lead Capture",
         "Email Support"
       ],
       missing: [
-        "Instant SMS Replies",
-        "AI Workflow Automations",
+        "Automated SMS Follow-ups",
+        "Zapier/CRM Integrations",
         "Priority Support"
       ],
       popular: false
     },
     {
-      name: "Growth & Automation",
+      name: "Growth Automation",
       price: "$500",
       period: "/ month",
-      desc: "Our most popular plan. Get traffic and automate your lead follow-up so you never lose a job.",
+      desc: "The standard for growing businesses looking to automate their daily workflows.",
       features: [
-        "Everything in Website + SEO",
-        "Instant SMS Lead Replies",
-        "AI Receptionist (Text/Web)",
-        "CRM Integrations",
-        "Monthly Performance Reports",
+        "Everything in Starter AI",
+        "24/7 AI Receptionist (Voice/Text)",
+        "Automated SMS Lead Follow-ups",
+        "Zapier Integration with your CRM",
+        "Weekly Performance Reports",
         "Priority 24hr Support"
       ],
       missing: [
-        "Multi-Location Workflows"
+        "Custom Multi-Agent Workflows"
       ],
       popular: true
     },
     {
-      name: "Multi-Location",
+      name: "Enterprise Workflow",
       price: "$1000+",
       period: "/ month",
-      desc: "Custom funnels and workflows for franchises scaling across multiple cities.",
+      desc: "Custom multi-agent setups and complex backend automation for scaling teams.",
       features: [
-        "Everything in Growth & Automation",
-        "Connects to every tool you use",
-        "Custom workflows for complex rules",
-        "Staff Training & Onboarding",
+        "Everything in Growth Automation",
+        "Custom Multi-Agent AI Workflows",
+        "Full Backend Data Automation",
+        "Internal Team Training",
         "Dedicated Account Manager",
-        "Unlimited Revisions",
+        "Unlimited Workflow Revisions",
         "Instant Slack Support"
       ],
       missing: [],
@@ -64,11 +64,11 @@ export default function Pricing() {
   return (
     <section id="pricing" className="py-32 px-4 max-w-7xl mx-auto relative z-10">
       <div className="text-center mb-24">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4" style={{ fontFamily: "Poppins, Arial, sans-serif" }}>
-          Simple Pricing, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d97757] to-[#6a9bcc]">No Surprises.</span>
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          Automated Lead Generation, <span className="text-gradient">Fixed Monthly Price.</span>
         </h2>
-        <p className="text-[#faf9f5]/70 text-lg max-w-2xl mx-auto font-light leading-relaxed" style={{ fontFamily: "Lora, Georgia, serif" }}>
-          Stop paying for clicks that don't convert. Get a high-performance website and lead generation system for a flat monthly rate. Cancel anytime.
+        <p className="text-white/60 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+          No surprise project fees. Just powerful AI workflows and high-converting websites delivered as a simple monthly subscription. Cancel anytime.
         </p>
       </div>
 
@@ -97,12 +97,12 @@ export default function Pricing() {
             )}
             
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-2 group-hover:text-[#faf9f5] transition-colors" style={{ fontFamily: "Poppins, Arial, sans-serif" }}>{tier.name}</h3>
-              <p className="text-[#faf9f5]/60 text-sm mb-6 h-10 group-hover:text-[#faf9f5]/80 transition-colors" style={{ fontFamily: "Lora, Georgia, serif" }}>{tier.desc}</p>
+              <h3 className="text-2xl font-bold mb-2 group-hover:text-white transition-colors">{tier.name}</h3>
+              <p className="text-white/60 text-sm mb-6 h-10 group-hover:text-white/80 transition-colors">{tier.desc}</p>
               
               <div className="mb-8 flex items-baseline">
                 <span className="text-4xl font-black">{tier.price}</span>
-                <span className="text-[#faf9f5]/40 text-sm ml-2 font-mono">{tier.period}</span>
+                <span className="text-white/40 text-sm ml-2 font-mono">{tier.period}</span>
               </div>
 
               <motion.button 
@@ -112,7 +112,7 @@ export default function Pricing() {
                   const tierId = tier.name.toLowerCase().includes("starter") ? "starter" : tier.name.toLowerCase().includes("growth") ? "growth" : "enterprise";
                   window.location.href = `/onboarding?tier=${tierId}`;
                 }}
-                className={`w-full py-4 rounded-full font-bold transition-all mb-8 ${tier.popular ? 'bg-[#d97757] text-[#141413] hover:shadow-[0_0_25px_rgba(217,119,87,0.4)]' : 'bg-[#faf9f5]/10 text-[#faf9f5] hover:bg-[#faf9f5]/20'}`}
+                className={`w-full py-4 rounded-full font-bold transition-all mb-8 ${tier.popular ? 'bg-white text-black hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]' : 'bg-white/10 text-white hover:bg-white/20'}`}
               >
                 Start Subscription
               </motion.button>
@@ -127,7 +127,7 @@ export default function Pricing() {
                     className="flex items-start gap-3"
                   >
                     <Check size={18} className="text-green-400 shrink-0 mt-0.5 group-hover:text-green-300 transition-colors" />
-                    <span className="text-sm text-[#faf9f5]/80 group-hover:text-[#faf9f5] transition-colors">{feat}</span>
+                    <span className="text-sm text-white/80 group-hover:text-white transition-colors">{feat}</span>
                   </motion.div>
                 ))}
                 {tier.missing.map((feat, j) => (
