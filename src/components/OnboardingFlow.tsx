@@ -33,6 +33,7 @@ export default function OnboardingFlow() {
   const [businessInfo, setBusinessInfo] = useState<BusinessInfo>({ name: "", industry: "", reference: "" });
   const [contactInfo, setContactInfo] = useState<ContactInfo>({ name: "", email: "", phone: "" });
   const [isGeneratingSnippet, setIsGeneratingSnippet] = useState(false);
+  const [resolvedDomain, setResolvedDomain] = useState<string | null>(null);
 
   useEffect(() => {
     // Read the tier from URL on mount
@@ -44,11 +45,36 @@ export default function OnboardingFlow() {
     }
   }, []);
 
-  const nextStep = () => {
+  const nextStep = async () => {
     if (step === 3) {
-      // Simulate snippet generation for Step 4
       setIsGeneratingSnippet(true);
-      setTimeout(() => setIsGeneratingSnippet(false), 2500);
+      setStep(4);
+      
+      let domainToUse = null;
+      // 1. Check if they explicitly typed a URL in any field (accounting for mix-ups)
+      const explicitUrl = [businessInfo.reference, businessInfo.industry, businessInfo.name].find(s => /\.[a-z]{2,}/i.test(s) || s.startsWith('http'));
+      
+      if (explicitUrl) {
+        domainToUse = explicitUrl;
+      } else if (businessInfo.reference) {
+        // 2. No URL found? Use AI Search (Clearbit Autocomplete API) to find the domain for the plain text!
+        try {
+          const res = await fetch(`https://autocomplete.clearbit.com/v1/companies/suggest?query=${encodeURIComponent(businessInfo.reference)}`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.length > 0 && data[0].domain) {
+              domainToUse = data[0].domain;
+            }
+          }
+        } catch (e) {
+          console.error("AI Search failed", e);
+        }
+      }
+      
+      setResolvedDomain(domainToUse);
+      // Ensure the "Generating" loader runs for at least 1.5s for dramatic effect
+      setTimeout(() => setIsGeneratingSnippet(false), 1500);
+      return;
     }
     setStep((s) => Math.min(s + 1, 7));
   };
@@ -422,11 +448,10 @@ export default function OnboardingFlow() {
                     {/* Website Snippet Content */}
                     <div className="flex-1 relative overflow-hidden flex flex-col bg-[#0a0a0a]">
                       {(() => {
-                        const urlStr = [businessInfo.reference, businessInfo.industry, businessInfo.name].find(s => /\.[a-z]{2,}/i.test(s) || s.startsWith('http'));
-                        if (urlStr) {
+                        if (resolvedDomain) {
                           return (
                             <iframe 
-                              src={urlStr.startsWith('http') ? urlStr : `https://${urlStr}`}
+                              src={resolvedDomain.startsWith('http') ? resolvedDomain : `https://${resolvedDomain}`}
                               className="w-full h-full border-0 pointer-events-none bg-white"
                               sandbox="allow-scripts allow-same-origin"
                               title="Reference Website"
