@@ -36,3 +36,4 @@
 4. [TOOL] Always use bun instead of npm - npm is crashing with "Exit handler never called" errors on this environment.
 5. [TOOL] Always set `$env:NODE_TLS_REJECT_UNAUTHORIZED=0` when running bun to bypass `UNABLE_TO_VERIFY_LEAF_SIGNATURE` proxy errors.
 6. [BEHAVIOR] When asking open questions or requesting feedback on design/budget choices, ALWAYS assume a role and present the user with exactly 3 distinct, well-reasoned options to choose from.
+7. [PROCESS] Every 30 minutes, pause and output a clean summary of what has been accomplished and what the next immediate steps are. Ensure you review task artifacts to avoid drifting off track.
