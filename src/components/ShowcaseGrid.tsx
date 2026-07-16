@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 const showcases = [
+  { id: "real-estate", name: "Premium Real Estate", desc: "Futuristic AI concierge.", color: "from-cyan-500/20 to-emerald-500/0" },
+  { id: "accountant", name: "CPA & Accounting", desc: "Professional & trustworthy.", color: "from-blue-500/20 to-slate-500/0" },
   { id: "medspa", name: "MedSpa & Aesthetics", desc: "High-end clinical luxury.", color: "from-rose-500/20 to-pink-500/0" },
   { id: "aaa", name: "AI Automation Agency", desc: "Futuristic & technical.", color: "from-blue-500/20 to-cyan-500/0" },
   { id: "legal", name: "Boutique Legal Tech", desc: "Trust, authority, precision.", color: "from-slate-500/20 to-zinc-500/0" },
